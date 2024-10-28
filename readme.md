@@ -1,10 +1,10 @@
 Hello!
 
 Welcome to this bank_account project!
-<br />
-<br />
+<br>
+<br>
 The goal is to incorporate python and Object Oriented Programming (OOP) in order to successfully create a bank account that has different attributes.
-<br />
+<br>
 <br>
 Those attributes should hopefully include a full name of the bank account owner, the account number associated with that name, and a balance amount. 
 <br>
