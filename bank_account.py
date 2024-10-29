@@ -27,7 +27,11 @@ def withdraw(self, amount):
     else:
         print(f"Amount withdrawn: ${amount} | New balance: ${self.balance}")
 
+def get_balance(self):
+    print(f"Your current balance is: ${self.balance}.")
+    return self.balance
 
+def add_interest(self, amount):
 
     
 
