@@ -32,6 +32,11 @@ def get_balance(self):
     return self.balance
 
 def add_interest(self, amount):
+    interest = self.balance * 0.00083
+    print(f"Your current monthly balance (with interest) is {interest}.")
+    return interest
+
+def print_statement(self):
+    print(f"{self.name}\nAccount No.:{self.account}\nBalance: ${self.balance}")
 
     
-
