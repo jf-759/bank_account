@@ -1,4 +1,4 @@
-Hello and welcome to this <strong>bank_account</strong> project!
+Hello! Welcome to this <strong>bank_account</strong> project for ACS 1111!
 <br>
 <br>
 The goal is to incorporate Python and Object Oriented Programming (OOP) in order to successfully create a bank account that has different attributes.
