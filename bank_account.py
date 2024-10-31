@@ -40,3 +40,25 @@ class BankAccount:
     def print_statement(self):
         print(f"{self.full_name}\nAccount No.:{self.account_number}\nBalance: ${self.balance}")
 
+#3 Different Bank Accounts (checkings and savings):
+
+#1 Mitchell Hudson
+print("\n")
+
+checking1 = BankAccount("Mitchell Hudson")
+checking1.deposit(400000)
+checking1.withdraw(150)
+checking1.get_balance()
+checking1.add_interest("checkings")
+checking1.print_statement()
+checking1.display_account_info()
+print("\n")
+savings1 = BankAccount("Mitchell Hudson")
+savings1.deposit(500000)
+savings1.withdraw(200)
+savings1.get_balance()
+savings1.add_interest("savings")
+savings1.print_statement()
+savings1.display_account_info()
+print("\n")
+
