@@ -9,56 +9,113 @@ class BankAccount:
         self.set_account_type(account_type)
 
     def display_account_info(self):
-        print(f"Account Holder {self.full_name}")
-        print(f"Account Number: {self.account_number}")
-        print(f"Account Type: {self.account_type.capitalize() if self.account_type else 'Not Set'}")
-        print(f"Balance: ${self.balance:.2f}")
+        return (f"Account Holder {self.full_name}\n"
+            f"Account Number: {self.account_number}\n"
+            f"Account Type: {self.account_type.capitalize() if self.account_type else 'Not Set'}\n"
+            f"Balance: ${self.balance}")
+
 
     def deposit(self, amount):
         self.balance += amount
-        print(f"Amount deposited: ${amount} | New balance: ${self.balance}")
+        return(f"Amount deposited: ${amount} | New balance: ${self.balance}")
 
     def withdraw(self, amount):
-        if amount > self.balance:
-            print("Insufficient funds. You will now be charged with an overdraft fee of $10.")
+        self.balance -= amount
+        if self.balance < 0:
             self.balance -= 10
+            return("Insufficient funds. You will now be charged with an overdraft fee of $10.")
         else:
-            print(f"Amount withdrawn: ${amount} | New balance: ${self.balance}")
+            return(f"Amount withdrawn: ${amount} | New balance: ${self.balance}")
 
     def get_balance(self):
-        print(f"Your current balance is: ${self.balance}.")
+        print(f"Your current balance is: ${self.balance}")
         return self.balance
 
-    def add_interest(self, account_type):
+    def add_interest(self):
     
         interest = self.balance * 0.00083
         self.balance += interest
         self.balance = round(self.balance, 2)
-        print(f"Your current monthly balance (with interest) is {interest}.")
-        return interest
+        return(f"Your current monthly balance (with interest) is {interest}.")
+    
+    def set_account_type(self, account_type):
+        if account_type == "checkings":
+            self.account_type = "checkings"
+            self.intterest_rate = 0.00083
+        elif account_type == "savings":
+            self.account_type = "savings"
+            self.intterest_rate = 0.012 / 12
+        else:
+            raise ValueError("Invalid account type. Please choose either 'checkings' or 'savings'. Thank you.")
 
     def print_statement(self):
+        hidden_account_number = (str(self.account_number)[4:8])
+        hidden_account_number = "****" + hidden_account_number
+        print("-"*70)
         print(f"{self.full_name}\nAccount No.:{self.account_number}\nBalance: ${self.balance}")
+        print("-"*70)
 
 #3 Different Bank Accounts (checkings and savings):
 
 #1 Mitchell Hudson
 print("\n")
 
-checking1 = BankAccount("Mitchell Hudson")
-checking1.deposit(400000)
-checking1.withdraw(150)
-checking1.get_balance()
-checking1.add_interest("checkings")
-checking1.print_statement()
-checking1.display_account_info()
-print("\n")
-savings1 = BankAccount("Mitchell Hudson")
-savings1.deposit(500000)
-savings1.withdraw(200)
-savings1.get_balance()
-savings1.add_interest("savings")
-savings1.print_statement()
-savings1.display_account_info()
+checking1 = BankAccount("Mitchell Hudson", "checkings")
+print(checking1.deposit(400000))
+print(checking1.withdraw(150))
+print(checking1.get_balance())
+print(checking1.add_interest())
+print(checking1.print_statement())
+print(checking1.display_account_info())
+
 print("\n")
 
+savings1 = BankAccount("Mitchell Hudson", "savings")
+print(savings1.deposit(802300))
+print(savings1.withdraw(200))
+print(savings1.get_balance())
+print(savings1.add_interest())
+print(savings1.print_statement())
+print(savings1.display_account_info())
+
+print("\n")
+
+checking2 = BankAccount("Chris Bang", "checkings")
+print(checking2.deposit(801000))
+print(checking2.withdraw(300))
+print(checking2.get_balance())
+print(checking2.add_interest())
+print(checking2.print_statement())
+print(checking2.display_account_info())
+
+print("\n")
+
+savings2 = BankAccount("Chris Bang", "savings")
+print(savings2.deposit(3250000))
+print(savings2.withdraw(500))
+print(savings2.get_balance())
+print(savings2.add_interest())
+print(savings2.print_statement())
+print(savings2.display_account_info())
+
+print("\n")
+
+
+checking3 = BankAccount("Jane Fernandez", "checkings")
+print(checking3.deposit(700300))
+print(checking3.withdraw(300))
+print(checking3.get_balance())
+print(checking3.add_interest())
+print(checking3.print_statement())
+print(checking3.display_account_info())
+
+print("\n")
+
+savings3 = BankAccount("Jane Fernandez", "savings")
+print(savings3.deposit(759000))
+print(savings3.withdraw(100))
+print(savings3.get_balance())
+print(savings3.add_interest())
+print(savings3.print_statement())
+print(savings3.display_account_info())
+print("\n")
