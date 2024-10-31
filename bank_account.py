@@ -80,6 +80,7 @@ print(savings1.display_account_info())
 
 print("\n")
 
+#2 Chris Bang
 checking2 = BankAccount("Chris Bang", "checkings")
 print(checking2.deposit(801000))
 print(checking2.withdraw(300))
@@ -100,7 +101,7 @@ print(savings2.display_account_info())
 
 print("\n")
 
-
+#3 Jane Fernandez
 checking3 = BankAccount("Jane Fernandez", "checkings")
 print(checking3.deposit(700300))
 print(checking3.withdraw(300))
